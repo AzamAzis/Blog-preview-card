@@ -1,0 +1,177 @@
+/* ||ROOT */
+:root {
+	--yellow: hsl(47, 88%, 63%);
+	--yellow-hover: hsl(51, 92%, 41%);
+	--orange: hsl(14, 69%, 58%);
+	--white: hsl(0, 0%, 100%);
+	--gray-500: hsl(0, 0%, 42%);
+	--gray-950: hsl(0, 0%, 7%);
+}
+
+/* ||FONT FAMILY */
+@font-face {
+	font-family: "Figtree Medium";
+	src:
+		local("Figtree-Medium"),
+		url(./assets/fonts/static/Figtree-Medium.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "Figtree Bold";
+	src:
+		local("Figtree-ExtraBold"),
+		url(./assets/fonts/static/Figtree-ExtraBold.ttf) format(truetype);
+}
+
+/* ||GENERAL STYLES */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*:focus-visible {
+	border-radius: 10px;
+	outline: 2px dotted var(--orange);
+	outline-offset: 2px;
+}
+
+body,
+.author {
+	display: flex;
+}
+
+body {
+	justify-content: center;
+	align-items: center;
+	background-color: var(--yellow);
+	font-family: "Figtree Medium", sans-serif;
+	font-weight: 500;
+	line-height: 1.4;
+	min-height: 100vh;
+	position: relative;
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+img {
+	display: block;
+}
+
+h2,
+.btn,
+.title,
+.author__name {
+	font-family: "Figtree Bold", sans-serif;
+	font-weight: 800;
+}
+
+/* ||MAIN STYLES */
+.card {
+	background-color: var(--white);
+	border-radius: 25px;
+	box-shadow: 7px 7px 0 3px var(--gray-950);
+	padding: 1.5rem;
+	width: 85%;
+	max-width: 25rem;
+}
+
+.illustration {
+	border-radius: 15px;
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+}
+
+.btn,
+.publish-date,
+.quote,
+.author__name {
+	font-size: clamp(0.88rem, calc(0.83rem + 0.227vw), 1rem);
+}
+
+.btn,
+.title,
+.author__name {
+	color: var(--gray-950);
+}
+
+.btn,
+.title {
+	display: block;
+}
+
+.btn {
+	background-color: var(--yellow);
+	color: var(--gray-950);
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin-top: 1.25rem;
+	margin-bottom: 0.75rem;
+	padding: 0.5rem 0.75rem;
+	text-decoration: none;
+	width: fit-content;
+}
+
+.title {
+	font-size: clamp(1.5rem, calc(1.364rem + 0.682vw), 1.88rem);
+	text-decoration: none;
+}
+
+.publish-date,
+.title,
+.quote {
+	margin-bottom: 1.5rem;
+}
+
+.author {
+	align-items: center;
+	gap: 1rem;
+}
+
+/* ||FOOTER */
+.attribution {
+	bottom: .20%;
+	font-size: 0.6875rem;
+	position: absolute;
+	text-align: center;
+}
+
+.attribution a:link {
+	color: hsl(228, 45%, 44%);
+}
+
+.attribution a:visited {
+	color: hsl(240, 100%, 27%);
+}
+
+@media (hover: hover) {
+	.btn:hover {
+		background-color: var(--yellow-hover);
+	}
+
+	.title:hover {
+		color: var(--yellow);
+	}
+
+	.attribution a:hover {
+		color: hsl(228, 81%, 48%);
+	}
+}
+
+.btn:active {
+	background-color: var(--yellow);
+	scale: 0.95;
+}
+
+@media (pointer: coarse) and (orientation: landscape) {
+	.card {
+		margin-top: 2rem;
+		margin-bottom: 3.5rem;
+	}
+}
